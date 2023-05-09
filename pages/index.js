@@ -3,6 +3,7 @@ import { useState } from "react"
 import Forecast from '../components/Forecast'
 import useSWR, { SWRConfig } from 'swr'
 import Spinner from '../components/Spinner'
+import Location from '../components/Location';
 
 const cities = [
   'Los Angeles',
@@ -15,21 +16,26 @@ const cities = [
 const fetcher = url => fetch(url).then(r => r.json())
 
 export default function Home({ fallback }) {
-  const [city, setCity] = useState("Los Angeles")
-  const { data, error } = useSWR(`/api/weather/${city}`, fetcher)  
+  // const [city, setCity] = useState("Los Angeles")
+  // const { data, error } = useSWR(`/api/weather/${city}`, fetcher)  
+  // return (
+  //   <SWRConfig value={{ fallback }}>
+  //     <Wrapper>
+  //     <Cities>
+  //       { cities.map(c => (
+  //         <Button selected={c === city} key={c} onClick={() => setCity(c)}>{c}</Button>
+  //       ))}
+  //     </Cities>
+  //     <ForecastWrapper>
+  //       <Forecast data={data}/>
+  //     </ForecastWrapper>
+  //     </Wrapper>
+  //   </SWRConfig>)
   return (
-    <SWRConfig value={{ fallback }}>
-      <Wrapper>
-      <Cities>
-        { cities.map(c => (
-          <Button selected={c === city} key={c} onClick={() => setCity(c)}>{c}</Button>
-        ))}
-      </Cities>
-      <ForecastWrapper>
-        <Forecast data={data}/>
-      </ForecastWrapper>
-      </Wrapper>
-    </SWRConfig>)
+    <div>
+      <Location />
+    </div>
+  );
 }
 
 export async function getServerSideProps(context) {
@@ -43,7 +49,7 @@ export async function getServerSideProps(context) {
   // turn the resopnse into JSON
   const data = await response.json()
   return {
-    props: {data}
+    props: { data }
   }
 }
 
@@ -71,5 +77,5 @@ const Button = styled.button`
   background-color: transparent;
   font-size: 1rem;
   padding: 5px;
-  border-bottom: 2px solid ${(p) => p.selected? 'black' : 'transparent'} ;
+  border-bottom: 2px solid ${(p) => p.selected ? 'black' : 'transparent'} ;
 `
