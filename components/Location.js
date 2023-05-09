@@ -13,13 +13,24 @@ const Location = () => {
         }
     }, []);
 
+
+
     return (
         <div>
             <h1>My Location</h1>
-            <p>Latitude: {latitude}</p>
-            <p>Longitude: {longitude}</p>
+            {latitude && <p>Latitude: {latitude}</p>}
+            {longitude && <p>Longitude: {longitude}</p>}
         </div>
     );
 };
-
+export const getLocation = async () => {
+    return new Promise((resolve, reject) => {
+        const intervalId = setInterval(() => {
+            if (latitude && longitude) {
+                clearInterval(intervalId);
+                resolve({ latitude, longitude });
+            }
+        }, 100);
+    });
+};
 export default Location;

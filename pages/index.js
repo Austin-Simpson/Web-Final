@@ -4,6 +4,7 @@ import Forecast from '../components/Forecast'
 import useSWR, { SWRConfig } from 'swr'
 import Spinner from '../components/Spinner'
 import Location from '../components/Location';
+import RestaurantSearch from '../components/RestaurantSearch';
 
 const cities = [
   'Los Angeles',
@@ -33,7 +34,7 @@ export default function Home({ fallback }) {
   //   </SWRConfig>)
   return (
     <div>
-      <Location />
+      <RestaurantSearch />
     </div>
   );
 }
