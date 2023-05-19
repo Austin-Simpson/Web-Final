@@ -11,7 +11,7 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const results = await YelpAPI.search(term, location);
-    setBusinesses(results.slice(0, 5));
+    setBusinesses(results.slice(0, 12));
   };
 
   const handleLocation = () => {
