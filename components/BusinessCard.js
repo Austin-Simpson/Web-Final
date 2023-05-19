@@ -279,8 +279,8 @@ const ImageWrapper = styled.div`
 `;
 
 const BusinessImage = styled.img`
-  width: 200px;
-  height: auto;
+  width: auto;
+  height: 300px;
   border-radius: 15px;
 `;
 
