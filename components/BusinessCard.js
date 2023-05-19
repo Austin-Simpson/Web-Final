@@ -25,7 +25,7 @@ export default function BusinessCard({ business }) {
         <InfoWrapper>
           <InformationalText>Rating: {business.rating}/5</InformationalText>
           <InformationalText>Review Count: {business.review_count}</InformationalText>
-          <a href={business.url}>
+          <a href={business.url} target="_blank">
             <YelpLogoImage src={YelpLogo} alt="Yelp Logo" />
           </a>
 
@@ -45,7 +45,7 @@ export default function BusinessCard({ business }) {
                   target="_blank"
                   alt="View on Yelp"
                 >
-                  <MapsIcon src={MapLogo} alt="Directions" target="_blank" />
+                  <MapsIcon src={MapLogo} alt="Directions"/>
                   Get Directions
                 </Link>
               )}
