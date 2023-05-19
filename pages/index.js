@@ -9,6 +9,7 @@ export default function Home() {
   const [businesses, setBusinesses] = useState([]);
   const [error, setError] = useState('');
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const results = await YelpAPI.search(term, location);
@@ -32,7 +33,8 @@ export default function Home() {
 
   return (
     <FullWrapper>
-      <SearchWrapper onSubmit={handleSubmit}>
+      {/* Information about the Restaurant Search Box */}
+      <SearchWrapper onSubmit={handleSubmit}> 
         <SearchBox
           type="text"
           placeholder="Restaurant Type (leave blank for all)"
@@ -41,6 +43,7 @@ export default function Home() {
           value={term}
           onChange={(e) => setTerm(e.target.value)}
         />
+        {/* Information about the Location Search Box */}
         <SearchBox
           type="text"
           placeholder="Location"

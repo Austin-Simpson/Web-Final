@@ -1,6 +1,7 @@
 const YelpAPI = {
   async search(term, location) {
     const response = await fetch(`/api/search?term=${term}&location=${location}`);
+    // check if response is good and not empty
     if (!response || !response.ok) {
       throw new Error('Failed to get city from coordinates');
     }

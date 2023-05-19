@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import YelpLogo from '../assets/yelp_logo.png';
 
 const YelpLogo = 'https://www.elyons.com/wp-content/uploads/2018/11/yelp-logo-transparent-background-4.png';
 const MapLogo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Google_Maps_icon_%282020%29.svg/1428px-Google_Maps_icon_%282020%29.svg.png'
-export default function BusinessCard({ business }) {
-  const [isOpen, setIsOpen] = useState(false);
 
+// Code for the business cards
+export default function BusinessCard({ business }) {
+
+  // This is for the more info button
+  const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
+
+  // Yelp returns distance in meters, so we convert to miles and round to 2 decimal places
   const roundedDistance = Number(business.distance / 1609).toFixed(2);
 
   return (
@@ -17,6 +21,7 @@ export default function BusinessCard({ business }) {
       </TitleWrapper>
       <ContentWrapper>
         <ImageWrapper>
+          {/* placeholder if image not found */}
           <BusinessImage
             src={business.image_url || 'https://via.placeholder.com/150'}
           />
@@ -44,7 +49,7 @@ export default function BusinessCard({ business }) {
                   target="_blank"
                   alt="Directions on Google Maps"
                 >
-                  <MapsIcon src={MapLogo} alt="Directions on Google Maps"/>
+                  <MapsIcon src={MapLogo} alt="Directions on Google Maps" />
                   Get Directions
                 </Link>
               )}
