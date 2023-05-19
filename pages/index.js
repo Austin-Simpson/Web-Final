@@ -54,12 +54,16 @@ export default function Home() {
 }
 
 const Wrapper = styled.div`
-  display: flex;
+  // display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  // flex-wrap: wrap;
+  // justify-content: space-evenly;
   width: 100%;
   border: 1px solid red;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   `;
 
 const SearchWrapper = styled.form`
