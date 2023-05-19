@@ -19,20 +19,14 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
   colors: {
-    primary: '#0070f3',
+    primary: '#404852',
   },
 };
 
 const Wrapper = styled.div`
-  // background-color: ${props => props.theme.colors.primary};
-  // padding: 20px;
-  // color: white;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
 
-  background-color: #0070f3; /* Set the background color to blue */
-  min-height: 100vh; /* Ensure the wrapper occupies the full viewport height */
+  background-color: #404852; 
+  min-height: 100vh; 
   padding: 20px;
   color: white;
   display: flex;
