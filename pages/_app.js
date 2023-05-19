@@ -43,20 +43,6 @@ const Title = styled.h1`
   // height: 30px; 
 `;
 
-
-
-
-// export default function App({ Component, pageProps }) {
-//   return (
-//     <>
-//       <GlobalStyle />
-//       <ThemeProvider theme={theme}>
-//         <Component {...pageProps} />
-//       </ThemeProvider>
-//       </>
-//   )
-// }
-
 export default function App({ Component, pageProps }) {
   return (
     <>

@@ -18,7 +18,7 @@ export default function BusinessCard({ business }) {
       <ContentWrapper>
         <ImageWrapper>
           <BusinessImage
-            src={business.image_url || 'https://your-placeholder-image-url'}
+            src={business.image_url || 'https://via.placeholder.com/150'}
             alt={business.name}
           />
         </ImageWrapper>
@@ -32,12 +32,6 @@ export default function BusinessCard({ business }) {
           <ButtonWrapper>
             <Button onClick={toggleOpen}>More Info</Button>
           </ButtonWrapper>
-
-
-
-          {/* <ButtonWrapper>
-        <button onClick={toggleOpen}>More Info</button>
-      </ButtonWrapper> */}
           {isOpen && (
             <MoreInfoWrapper>
               {business.distance && (
@@ -48,9 +42,10 @@ export default function BusinessCard({ business }) {
               {business.coordinates && (
                 <Link
                   href={`https://www.google.com/maps/dir/?api=1&destination=${business.coordinates.latitude},${business.coordinates.longitude}`}
+                  target="_blank"
                   alt="View on Yelp"
                 >
-                  <MapsIcon src={MapLogo} alt="Directions" />
+                  <MapsIcon src={MapLogo} alt="Directions" target="_blank" />
                   Get Directions
                 </Link>
               )}
@@ -61,8 +56,6 @@ export default function BusinessCard({ business }) {
     </CardContainer>
   );
 }
-
-// CSS styles:
 
 const MapsIcon = styled.img`
   height: 1.5rem;
