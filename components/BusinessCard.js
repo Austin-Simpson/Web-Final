@@ -26,7 +26,7 @@ export default function BusinessCard({ business }) {
           <InformationalText>Rating: {business.rating}/5</InformationalText>
           <InformationalText>Review Count: {business.review_count}</InformationalText>
           <a href={business.url} target="_blank">
-            <YelpLogoImage src={YelpLogo} alt="Yelp Logo" />
+            <YelpLogoImage src={YelpLogo} alt="Link to Business on Yelp" />
           </a>
 
           <ButtonWrapper>
@@ -43,9 +43,9 @@ export default function BusinessCard({ business }) {
                 <Link
                   href={`https://www.google.com/maps/dir/?api=1&destination=${business.coordinates.latitude},${business.coordinates.longitude}`}
                   target="_blank"
-                  alt="View on Yelp"
+                  alt="Directions on Google Maps"
                 >
-                  <MapsIcon src={MapLogo} alt="Directions"/>
+                  <MapsIcon src={MapLogo} alt="Directions on Google Maps"/>
                   Get Directions
                 </Link>
               )}

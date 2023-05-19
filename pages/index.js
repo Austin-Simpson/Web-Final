@@ -36,12 +36,14 @@ export default function Home() {
         <SearchBox
           type="text"
           placeholder="Restaurant Type (leave blank for all)"
+          alt="Restaurant Type (leave blank for all)"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
         />
         <SearchBox
           type="text"
           placeholder="Location"
+          alt="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
