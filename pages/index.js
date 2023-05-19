@@ -62,8 +62,6 @@ export default function Home() {
   );
 }
 
-
-
 const FullWrapper = styled.div`
   display: flex;
   width: 100%;
