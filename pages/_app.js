@@ -37,10 +37,6 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 42px;
-  // display: flex;
-  // justify-content: center; 
-  // align-items: center;
-  // height: 30px; 
 `;
 
 export default function App({ Component, pageProps }) {

@@ -71,7 +71,6 @@ const Link = styled.a`
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  // align-items: flex-start;
   border: 1px solid #ddd;
   border-radius: 15px;
   margin: 10px;
@@ -166,7 +165,6 @@ const MoreInfoWrapper = styled.div`
 `;
 
 const InformationalText = styled.p`
-  // margin-bottom: 6px;
   margin: .3ch;
   font-size: 1.5rem
 

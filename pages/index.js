@@ -37,6 +37,7 @@ export default function Home() {
           type="text"
           placeholder="Restaurant Type (leave blank for all)"
           alt="Restaurant Type (leave blank for all)"
+          label="Restaurant Type (leave blank for all)"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
         />
@@ -44,11 +45,12 @@ export default function Home() {
           type="text"
           placeholder="Location"
           alt="Location"
+          label="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-        <Button type="submit">Search</Button>
-        <Button type="button" onClick={handleLocation}>
+        <Button type="submit" alt="Search">Search</Button>
+        <Button type="button" alt="Get location" onClick={handleLocation}>
           Get Current City
         </Button>
         {error && <NewLine />}
@@ -89,8 +91,6 @@ const SearchWrapper = styled.form`
   padding: 20px;
   background-color: rgba(0,0,0,0.2);
   width: fit-content;
-  // width: 100%;
-  // center items within the flex container
   display: flex;
   justify-content: center;
   align-items: center;
