@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <FullWrapper>
       <SearchWrapper onSubmit={handleSubmit}>
         <SearchBox
           type="text"
@@ -49,20 +49,32 @@ export default function Home() {
         <BusinessCard key={business.id} business={business} />
       ))}
       </Wrapper>
-    </div>
+    </FullWrapper>
   );
 }
+
+const FullWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  `;
 
 const Wrapper = styled.div`
   // display: flex;
   flex-direction: row;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   // justify-content: space-evenly;
   width: 100%;
-  border: 1px solid red;
+  border: 2px dashed red;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  // grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+
   gap: 20px;
   `;
 

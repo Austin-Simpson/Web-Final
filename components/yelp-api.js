@@ -8,7 +8,9 @@ const YelpAPI = {
   
     async getCityFromCoordinates(lat, lon) {
       const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`);
+      
       const data = await response.json();
+      
       return {
         city: data.address.city || data.address.town,
         state: data.address.state
