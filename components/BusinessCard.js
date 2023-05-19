@@ -19,7 +19,6 @@ export default function BusinessCard({ business }) {
         <ImageWrapper>
           <BusinessImage
             src={business.image_url || 'https://via.placeholder.com/150'}
-            alt={business.name}
           />
         </ImageWrapper>
         <InfoWrapper>
