@@ -68,9 +68,8 @@ const RestaurantTitle = styled.h2`
 `;
 
 const BusinessImage = styled.img`
-width-min: 20px;  
-width: 20%;
-width-max: 100px;
+width: 100%;
+max-width: 100px;
   // height: 20%;
   border-radius: 15px;
 `;
